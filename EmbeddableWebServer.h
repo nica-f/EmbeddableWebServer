@@ -70,6 +70,7 @@ int main() {
 
 #include <stdbool.h>
 
+#ifndef EWS_HEADER_ONLY
 /* Quick nifty options */
 static bool OptionPrintWholeRequest = false;
 /* /status page - makes quite a few things take a lock to update counters but it doesn't make much of a difference. This isn't something like Nginx or Haywire*/
@@ -78,6 +79,7 @@ static bool OptionIncludeStatusPageAndCounters = true;
 static bool OptionListDirectoryContents = true;
 /* Print the entire server response to every request */
 static bool OptionPrintResponse = false;
+#endif
 
 /* These bound the memory used by a request. The headers used to be dynamically allocated but I've made them hard coded because: 1. Memory used by a request should be bounded 2. It was responsible for 2 * headersCount allocations every request */
 #define REQUEST_MAX_HEADERS 64
