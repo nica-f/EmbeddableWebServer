@@ -63,8 +63,8 @@ int main() {
 */
 
 /* You can turn these prints on/off.  ews_printf generally prints warnings + errors while ews_print_debug prints mundane information */
-#define ews_printf printf
-//#define ews_printf(...)
+//#define ews_printf printf
+#define ews_printf(...)
 //#define ews_printf_debug printf
 #define ews_printf_debug(...)
 
